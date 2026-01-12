@@ -1,35 +1,38 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useFormspree } from '@formspree/react';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [status, setStatus] = useState({ type: '', message: '' });
-  const [loading, setLoading] = useState(false);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const [state, handleSubmit] = useFormspree("YOUR_FORM_ID"); // TODO: Replace 'YOUR_FORM_ID' with your actual Formspree form ID. Sign up at https://formspree.io and create a new form to get your unique endpoint ID.
+  
+  // Update the contact details
+  const contactInfo = {
+    email: 'contact@zenvyratech.in',
+    phone: '+91 875 044 3995', // Updated phone number
+    location: 'Bangalore, Karnataka, India',
+    businessHours: [
+      { day: 'Monday - Friday', hours: '9:00 AM - 7:00 PM' },
+      { day: 'Saturday', hours: '10:00 AM - 5:00 PM' },
+      { day: 'Sunday', hours: 'Closed' },
+    ],
+    whatToExpect: [
+      'Response within 24 hours',
+      'Free project consultation',
+      'Detailed proposal with timeline',
+      'Transparent pricing',
+    ],
   };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    // Simulate sending the form data
-    setTimeout(() => {
-      setStatus({
-        type: 'success',
-        message: 'Thank you for your message! We\'ll get back to you soon. In the meantime, feel free to reach out to us directly at contact@zenvyratech.com',
-      });
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setLoading(false);
-    }, 1500);
+  
+  // Update the status based on Formspree state
+  const status = {
+    type: state.succeeded ? 'success' : state.errors ? 'error' : '',
+    message: state.succeeded 
+      ? 'Thank you for your message! We\'ll get back to you soon.'
+      : state.errors 
+        ? 'There was an error submitting the form. Please try again.'
+        : ''
   };
 
   return (
@@ -44,7 +47,7 @@ const Contact = () => {
         <meta property="og:title" content="Contact Zenvyra Tech | Get in Touch for Digital Solutions" />
         <meta property="og:description" content="Get in touch with Zenvyra Tech to start your digital project. Reach out for web development, SEO, design, and digital marketing services." />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.zenvyratech.com/contact" />
+        <meta property="og:url" content="https://www.zenvyratech.in/contact" />
         <meta property="og:image" content="/images/contact-og.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact Zenvyra Tech | Get in Touch for Digital Solutions" />
@@ -78,8 +81,6 @@ const Contact = () => {
                       type="text"
                       id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-charcoal border border-steel rounded-lg text-soft-white focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all duration-300"
                       placeholder="Your name"
@@ -94,8 +95,6 @@ const Contact = () => {
                       type="email"
                       id="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-charcoal border border-steel rounded-lg text-soft-white focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all duration-300"
                       placeholder="your@email.com"
@@ -110,8 +109,6 @@ const Contact = () => {
                       type="text"
                       id="subject"
                       name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-charcoal border border-steel rounded-lg text-soft-white focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all duration-300"
                       placeholder="Project inquiry"
@@ -125,8 +122,6 @@ const Contact = () => {
                     <textarea
                       id="message"
                       name="message"
-                      value={formData.message}
-                      onChange={handleChange}
                       required
                       rows="6"
                       className="w-full px-4 py-3 bg-charcoal border border-steel rounded-lg text-soft-white focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all duration-300 resize-none"
@@ -148,10 +143,10 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    disabled={loading}
+                    disabled={state.submitting}
                     className="w-full px-6 py-4 bg-accent text-charcoal font-semibold rounded-lg hover:bg-soft-white transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    {loading ? 'Sending...' : 'Send Message'}
+                    {state.submitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               </GlassCard>
@@ -168,24 +163,24 @@ const Contact = () => {
                     <div>
                       <p className="text-sm text-muted-grey mb-1">Email</p>
                       <a
-                        href="mailto:contact@zenvyratech.com"
+                        href="mailto:contact@zenvyratech.in"
                         className="text-accent hover:text-soft-white transition-colors duration-300"
                       >
-                        contact@zenvyratech.com
+                        {contactInfo.email}
                       </a>
                     </div>
                     <div>
                       <p className="text-sm text-muted-grey mb-1">Phone</p>
                       <a
-                        href="tel:+911234567890"
+                        href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
                         className="text-accent hover:text-soft-white transition-colors duration-300"
                       >
-                        +91 123 456 7890
+                        {contactInfo.phone}
                       </a>
                     </div>
                     <div>
                       <p className="text-sm text-muted-grey mb-1">Location</p>
-                      <p className="text-soft-white">India</p>
+                      <p className="text-soft-white">{contactInfo.location}</p>
                     </div>
                   </div>
                 </GlassCard>
@@ -195,18 +190,12 @@ const Contact = () => {
                     Business Hours
                   </h3>
                   <div className="space-y-2">
-                    <div className="flex justify-between">
-                      <span className="text-muted-grey">Monday - Friday</span>
-                      <span className="text-soft-white">9:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-grey">Saturday</span>
-                      <span className="text-soft-white">10:00 AM - 4:00 PM</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-grey">Sunday</span>
-                      <span className="text-soft-white">Closed</span>
-                    </div>
+                    {contactInfo.businessHours.map((hour, index) => (
+                      <div key={index} className="flex justify-between">
+                        <span className="text-muted-grey">{hour.day}</span>
+                        <span className="text-soft-white">{hour.hours}</span>
+                      </div>
+                    ))}
                   </div>
                 </GlassCard>
 
@@ -215,18 +204,12 @@ const Contact = () => {
                     What to Expect
                   </h3>
                   <ul className="space-y-2 text-muted-grey">
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">→</span>
-                      Response within 24-48 hours
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">→</span>
-                      Free initial consultation
-                    </li>
-                    <li className="flex items-start">
-                      <span className="text-accent mr-2">→</span>
-                      Detailed project proposal
-                    </li>
+                    {contactInfo.whatToExpect.map((item, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="text-accent mr-2">→</span>
+                        {item}
+                      </li>
+                    ))}
                   </ul>
                 </GlassCard>
               </div>
