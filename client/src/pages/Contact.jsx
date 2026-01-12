@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useFormspree } from '@formspree/react';
+import { useForm } from '@formspree/react';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 
 const Contact = () => {
-  const [state, handleSubmit] = useFormspree("YOUR_FORM_ID"); // TODO: Replace 'YOUR_FORM_ID' with your actual Formspree form ID. Sign up at https://formspree.io and create a new form to get your unique endpoint ID.
+  const [state, handleSubmit] = useForm("xeeeqaor"); // Formspree form ID - make sure this matches your form ID from https://formspree.io
   
   // Update the contact details
   const contactInfo = {
     email: 'contact@zenvyratech.in',
     phone: '+91 875 044 3995', // Updated phone number
-    location: 'Bangalore, Karnataka, India',
+    location: 'Delhi, India',
     businessHours: [
       { day: 'Monday - Friday', hours: '9:00 AM - 7:00 PM' },
       { day: 'Saturday', hours: '10:00 AM - 5:00 PM' },
