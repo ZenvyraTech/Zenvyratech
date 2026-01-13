@@ -22,6 +22,9 @@ export default {
         'accent': '#3CF2FF',
       },
       fontFamily: {
+        // Heading font for that sharp futuristic look
+        heading: ['Orbitron', 'Space Grotesk', 'system-ui', 'sans-serif'],
+        // Body font
         sans: ['Inter', 'Space Grotesk', 'system-ui', 'sans-serif'],
       },
       animation: {

@@ -8,9 +8,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand & Contact Info */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold mb-4">
+            <h3 className="text-2xl font-bold mb-4 font-heading whitespace-nowrap">
               <span className="text-soft-white">ZENVYRA</span>
-              <span className="text-accent"> TECH</span>
+              <span className="ml-2 text-accent">TECH</span>
             </h3>
             <p className="text-muted-grey text-sm leading-relaxed mb-6">
               Engineering digital systems that scale.

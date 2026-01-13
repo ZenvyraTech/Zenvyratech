@@ -1,6 +1,51 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaSun, FaMoon } from 'react-icons/fa';
+
+// Resolve public assets reliably in both dev and prod builds
+// Use the SVG text-logo as primary for crisp scaling
+const logoSvg = new URL('/logo.svg', import.meta.url).href;
+
+// ThemeToggle component — toggles `light` class on <html> and persists preference
+function ThemeToggle() {
+  const [theme, setTheme] = useState(() => {
+    try {
+      const stored = localStorage.getItem('theme');
+      if (stored) return stored;
+    } catch {}
+    // If no stored preference, respect OS preference
+    try {
+      if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+        return 'light';
+      }
+    } catch {}
+    return 'dark';
+  });
+
+  useEffect(() => {
+    const doc = document.documentElement;
+    if (theme === 'light') {
+      doc.classList.add('light');
+    } else {
+      doc.classList.remove('light');
+    }
+    try {
+      localStorage.setItem('theme', theme);
+    } catch {}
+  }, [theme]);
+
+  return (
+    <button
+      onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
+      className="p-2 rounded-md bg-steel/60 hover:bg-steel/80 text-soft-white transition-colors duration-200 flex items-center justify-center"
+      aria-label="Toggle theme"
+      title="Toggle theme"
+    >
+      {theme === 'light' ? <FaMoon size={16} /> : <FaSun size={16} />}
+    </button>
+  );
+}
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,16 +82,25 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="text-2xl font-bold tracking-tight group">
-            <span className="text-soft-white group-hover:text-accent transition-colors duration-300">
-              ZENVYRA
-            </span>
-            <span className="text-accent"> TECH</span>
-          </Link>
+          {/* Left: Logo */}
+          <div className="flex items-center flex-shrink-0">
+            <Link to="/" className="flex items-center space-x-3 group" aria-label="Zenvyra Tech - Home">
+              <img
+                src={logoSvg}
+                alt="Zenvyra Tech"
+                // responsive sizes: slightly larger on bigger screens for better presence
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain block"
+              />
+              {/* Single-line brand text (no wrapping) using heading font */}
+                <span className="ml-3 whitespace-nowrap font-heading tracking-wider leading-tight flex items-baseline">
+                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-soft-white">ZENVYRA</span>
+                  <span className="ml-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-accent">TECH</span>
+                </span>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          {/* Center: Desktop Navigation */}
+          <div className="hidden md:flex space-x-8 flex-1 justify-center">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -68,29 +122,37 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden text-soft-white focus:outline-none"
-          >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span
-                className={`block h-0.5 bg-soft-white transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
-              />
-              <span
-                className={`block h-0.5 bg-soft-white transition-all duration-300 ${
-                  isMobileMenuOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`block h-0.5 bg-soft-white transition-all duration-300 ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                }`}
-              />
+          {/* Right: Theme toggle (desktop) + Mobile Menu Button */}
+          <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center">
+              <ThemeToggle />
             </div>
-          </button>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden text-soft-white focus:outline-none"
+              aria-label="Open menu"
+            >
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span
+                  className={`block h-0.5 bg-soft-white transition-all duration-300 ${
+                    isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 bg-soft-white transition-all duration-300 ${
+                    isMobileMenuOpen ? 'opacity-0' : ''
+                  }`}
+                />
+                <span
+                  className={`block h-0.5 bg-soft-white transition-all duration-300 ${
+                    isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
+                  }`}
+                />
+              </div>
+            </button>
+          </div>
         </div>
       </div>
 

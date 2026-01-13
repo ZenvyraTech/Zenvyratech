@@ -15,10 +15,58 @@
   
   body {
     @apply bg-charcoal text-soft-white;
-    font-family: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
     cursor: none; /* Hide the default cursor */
   }
+
+  /* Headings use the Orbitron tech-style font */
+  h1, h2, h3, .heading {
+    font-family: 'Orbitron', system-ui, sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  /* Light theme overrides when `.light` is present on <html> */
+  html.light body {
+    /* Soft neutral background with a faint cool tint */
+    background: linear-gradient(180deg, #fbfdff 0%, #f6f9fb 100%);
+    color: #0b0d10; /* dark text */
+    cursor: default;
+  }
+
+  /* Override commonly used bg/text classes for light theme (polished look) */
+  html.light .bg-charcoal { background-color: #fbfdff !important; }
+  html.light .bg-graphite { background-color: #f7f9fb !important; }
+  html.light .bg-steel { background-color: #f1f4f7 !important; }
+  html.light .text-soft-white { color: #0b0d10 !important; }
+  html.light .text-muted-grey { color: #6b7280 !important; }
+
+  /* Lighter glass effect for the light theme */
+  html.light .glass-effect {
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(11,13,16,0.06);
+    box-shadow: 0 6px 24px rgba(11,13,16,0.04);
+  }
+
+  /* Adjust glow / neon intensity in light theme so it's subtle and readable */
+  html.light .text-glow {
+    text-shadow: 0 0 8px rgba(60, 242, 255, 0.25);
+  }
+
+  /* Light-themed neon buttons (darker accent for contrast) */
+  html.light .neon-btn {
+    background: linear-gradient(90deg, rgba(0,128,143,0.06), rgba(0,128,143,0.02));
+    border: 1px solid rgba(0,128,143,0.12);
+    color: #05323b;
+  }
+
+  html.light .neon-btn:hover {
+    box-shadow: 0 6px 30px rgba(0,128,143,0.08);
+  }
+
+  /* So the subtle noise texture doesn't dominate in light mode */
+  html.light body::before { opacity: 0.02; }
 
   html {
     scroll-behavior: smooth;
@@ -48,6 +96,50 @@
 
   .text-glow {
     text-shadow: 0 0 20px rgba(60, 242, 255, 0.5);
+  }
+
+  /* Neon outline for buttons and subtle glows */
+  .neon-outline {
+    border: 1px solid rgba(60,242,255,0.18);
+    box-shadow: 0 0 24px rgba(60,242,255,0.06);
+  }
+
+  .neon-btn {
+    background: linear-gradient(90deg, rgba(60,242,255,0.06), rgba(60,242,255,0.02));
+    border: 1px solid rgba(60,242,255,0.16);
+    color: #DFFBFF;
+    transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  }
+
+  .neon-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 30px rgba(60,242,255,0.12), inset 0 -2px 12px rgba(60,242,255,0.03);
+    background: linear-gradient(90deg, rgba(60,242,255,0.12), rgba(60,242,255,0.04));
+  }
+
+  /* Animated cyber background gradient */
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .bg-cyber {
+    background: linear-gradient(120deg, rgba(12,14,17,1) 0%, rgba(18,20,24,1) 40%, rgba(7,25,33,1) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 12s ease infinite;
+  }
+
+  /* Subtle grid lines for coder vibe */
+  .cyber-grid::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient(rgba(60,242,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(60,242,255,0.02) 1px, transparent 1px);
+    background-size: 120px 120px, 120px 120px;
+    mix-blend-mode: overlay;
+    opacity: 0.35;
   }
 
   .smooth-scroll {

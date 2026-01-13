@@ -67,7 +67,7 @@ const Home = () => {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-cyber cyber-grid">
           {/* Animated Background */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent"></div>
@@ -94,14 +94,14 @@ const Home = () => {
             >
               <motion.h1
                 variants={textVariant(0.2)}
-                className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight"
+                className="font-heading whitespace-nowrap text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-wider uppercase text-glow"
               >
-                <span className="text-soft-white">Zenvyra Tech</span>
+                <span className="text-soft-white">ZENVYRA <span className="text-accent">TECH</span></span>
               </motion.h1>
 
               <motion.h2
                 variants={textVariant(0.4)}
-                className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-8 text-muted-grey"
+                className="text-2xl md:text-4xl lg:text-5xl font-semibold mb-8 text-muted-grey text-glow tracking-wide"
               >
                 Engineering Digital Systems That Scale
               </motion.h2>
@@ -133,6 +133,14 @@ const Home = () => {
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Decorative animated accent */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: [0, 0.25, 0], scale: [0.9, 1.05, 0.9] }}
+          transition={{ duration: 6, repeat: Infinity }}
+          className="absolute -bottom-32 left-1/2 transform -translate-x-1/2 w-80 h-80 bg-gradient-to-br from-accent/20 via-transparent to-transparent rounded-full blur-3xl pointer-events-none"
+        />
 
         {/* Scroll Indicator */}
         <motion.div
