@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
@@ -35,13 +35,11 @@ const SEOServices = () => {
 
   return (
     <>
-      <Helmet>
-        <title>SEO Services for Long-Term Growth | Zenvyra Tech</title>
-        <meta
-          name="description"
-          content="Performance-focused SEO strategies including technical SEO, on-page optimization, and content systems."
-        />
-      </Helmet>
+      <Seo
+        title="SEO Services in India | Zenvyra Tech"
+        description="Data-driven SEO services to increase rankings, traffic and conversions."
+        pathname="/seo-services"
+      />
 
       <div className="min-h-screen pt-32 pb-20">
         {/* Hero */}

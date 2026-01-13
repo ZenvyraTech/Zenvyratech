@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import AnimatedSection from '../components/AnimatedSection';
 import { blogPosts } from '../content/blogs';
 
@@ -38,20 +38,14 @@ const BlogPost = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{post.title} | Zenvyra Tech Blog</title>
-        <meta name="description" content={post.seoDescription || post.excerpt} />
-        <meta name="keywords" content={post.seoKeywords ? post.seoKeywords.join(', ') : post.tags ? post.tags.join(', ') : post.category} />
-        <meta property="og:title" content={post.title} />
-        <meta property="og:description" content={post.seoDescription || post.excerpt} />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content={`https://www.zenvyratech.com/blog/${post.slug}`} />
-        <meta property="og:image" content={post.featuredImage || '/images/default-blog-og.jpg'} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={post.title} />
-        <meta name="twitter:description" content={post.seoDescription || post.excerpt} />
-        <meta name="twitter:image" content={post.featuredImage || '/images/default-blog-og.jpg'} />
-      </Helmet>
+      <Seo
+        title={`${post.title} | Zenvyra Tech Blog`}
+        description={post.seoDescription || post.excerpt}
+        pathname={`/blog/${post.slug}`}
+        image={post.featuredImage || '/images/default-blog-og.jpg'}
+        type="article"
+        keywords={post.seoKeywords ? post.seoKeywords.join(', ') : post.tags ? post.tags.join(', ') : post.category}
+      />
 
       <div className="min-h-screen pt-32 pb-20">
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">

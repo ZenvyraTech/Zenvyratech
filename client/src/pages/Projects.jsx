@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import { motion } from 'framer-motion';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
@@ -8,23 +8,13 @@ const Projects = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Our Work | Zenvyra Tech</title>
-        <meta
-          name="description"
-          content="Explore digital projects and systems built by Zenvyra Tech."
-        />
-        <meta name="keywords" content="portfolio, projects, case studies, web development, design, SEO" />
-        <meta property="og:title" content="Our Work | Zenvyra Tech" />
-        <meta property="og:description" content="Explore digital projects and systems built by Zenvyra Tech." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.zenvyratech.com/projects" />
-        <meta property="og:image" content="/images/projects-og.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Work | Zenvyra Tech" />
-        <meta name="twitter:description" content="Explore digital projects and systems built by Zenvyra Tech." />
-        <meta name="twitter:image" content="/images/projects-og.jpg" />
-      </Helmet>
+      <Seo
+        title="Projects & Case Studies | Zenvyra Tech"
+        description="Real-world digital solutions and high-performance websites delivered by Zenvyra Tech."
+        pathname="/projects"
+        image="/images/projects-og.jpg"
+        keywords="portfolio, projects, case studies, web development, design, SEO"
+      />
 
       <div className="min-h-screen pt-32 pb-20">
         {/* Hero */}

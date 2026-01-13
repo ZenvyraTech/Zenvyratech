@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import { FaCode, FaShoppingCart, FaSearch, FaBullhorn, FaPalette, FaCogs, FaCheck } from 'react-icons/fa';
@@ -8,23 +8,13 @@ const Services = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Our Services | Zenvyra Tech</title>
-        <meta
-          name="description"
-          content="Explore Zenvyra Tech's comprehensive digital services including web development, SEO, e-commerce, design, and marketing solutions."
-        />
-        <meta name="keywords" content="web development, SEO services, e-commerce, UI/UX design, digital marketing, automation" />
-        <meta property="og:title" content="Our Services | Zenvyra Tech" />
-        <meta property="og:description" content="Explore Zenvyra Tech's comprehensive digital services including web development, SEO, e-commerce, design, and marketing solutions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.zenvyratech.com/services" />
-        <meta property="og:image" content="/images/services-og.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Services | Zenvyra Tech" />
-        <meta name="twitter:description" content="Explore Zenvyra Tech's comprehensive digital services including web development, SEO, e-commerce, design, and marketing solutions." />
-        <meta name="twitter:image" content="/images/services-og.jpg" />
-      </Helmet>
+      <Seo
+        title="Services | Web Development & SEO – Zenvyra Tech"
+        description="Full-stack web development, SEO optimization, UI/UX and digital growth services."
+        pathname="/services"
+        image="/images/services-og.jpg"
+        keywords="web development, SEO services, e-commerce, UI/UX design, digital marketing, automation"
+      />
 
       <div className="min-h-screen pt-32 pb-20">
         {/* Hero */}

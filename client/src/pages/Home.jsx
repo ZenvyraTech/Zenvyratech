@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import { FaCode, FaShoppingCart, FaSearch, FaBullhorn, FaPalette, FaCogs } from 'react-icons/fa';
@@ -59,17 +59,11 @@ const Home = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Zenvyra Tech | Web, SEO & Digital Solutions</title>
-        <meta
-          name="description"
-          content="Zenvyra Tech provides web development, SEO, digital marketing, design and scalable digital solutions for businesses in India."
-        />
-        <meta
-          name="keywords"
-          content="web development agency, SEO services India, digital solutions company"
-        />
-      </Helmet>
+      <Seo
+        title="Zenvyra Tech | Web Development, SEO & Digital Solutions"
+        description="Performance-driven digital agency delivering scalable websites, SEO services and growth-focused digital systems."
+        pathname="/"
+      />
 
       <div className="min-h-screen">
         {/* Hero Section */}

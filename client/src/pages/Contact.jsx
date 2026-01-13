@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import { useForm } from '@formspree/react';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
@@ -37,23 +37,13 @@ const Contact = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Contact Zenvyra Tech | Get in Touch for Digital Solutions</title>
-        <meta
-          name="description"
-          content="Get in touch with Zenvyra Tech to start your digital project. Reach out for web development, SEO, design, and digital marketing services."
-        />
-        <meta name="keywords" content="contact, get in touch, web development, SEO services, digital marketing, India" />
-        <meta property="og:title" content="Contact Zenvyra Tech | Get in Touch for Digital Solutions" />
-        <meta property="og:description" content="Get in touch with Zenvyra Tech to start your digital project. Reach out for web development, SEO, design, and digital marketing services." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.zenvyratech.in/contact" />
-        <meta property="og:image" content="/images/contact-og.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Zenvyra Tech | Get in Touch for Digital Solutions" />
-        <meta name="twitter:description" content="Get in touch with Zenvyra Tech to start your digital project. Reach out for web development, SEO, design, and digital marketing services." />
-        <meta name="twitter:image" content="/images/contact-og.jpg" />
-      </Helmet>
+      <Seo
+        title="Contact Zenvyra Tech | Let’s Build Something Scalable"
+        description="Get in touch with Zenvyra Tech for web development, SEO and digital solutions."
+        pathname="/contact"
+        image="/images/contact-og.jpg"
+        keywords="contact, get in touch, web development, SEO services, digital marketing, India"
+      />
 
       <div className="min-h-screen pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

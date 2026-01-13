@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import { blogPosts } from '../content/blogs';
@@ -18,13 +18,11 @@ const Blog = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Blog | Zenvyra Tech</title>
-        <meta
-          name="description"
-          content="Insights on web development, SEO, digital growth, and technology."
-        />
-      </Helmet>
+      <Seo
+        title="Blog | SEO & Web Growth Insights – Zenvyra Tech"
+        description="Actionable SEO strategies and web development insights by Zenvyra Tech."
+        pathname="/blog"
+      />
 
       <div className="min-h-screen pt-32 pb-20">
         {/* Hero */}

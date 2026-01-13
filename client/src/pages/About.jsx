@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 
@@ -25,13 +25,11 @@ const About = () => {
 
   return (
     <>
-      <Helmet>
-        <title>About Zenvyra Tech | Digital Engineering Studio</title>
-        <meta
-          name="description"
-          content="Learn about Zenvyra Tech, our philosophy, approach, and founder-led vision for digital excellence."
-        />
-      </Helmet>
+      <Seo
+        title="About Zenvyra Tech | Digital Growth Engineers"
+        description="Learn about Zenvyra Tech’s mission, vision and expertise in building scalable digital systems."
+        pathname="/about"
+      />
 
       <div className="min-h-screen pt-32 pb-20">
         {/* Intro */}

@@ -1,14 +1,15 @@
-import { Helmet } from 'react-helmet-async';
+import Seo from '../components/Seo';
 import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 
 const TermsConditions = () => {
   return (
     <>
-      <Helmet>
-        <title>Terms & Conditions | Zenvyra Tech</title>
-        <meta name="description" content="Terms and Conditions for Zenvyra Tech services." />
-      </Helmet>
+      <Seo
+        title="Terms & Conditions | Zenvyra Tech"
+        description="Terms governing the use of Zenvyra Tech website and services."
+        pathname="/terms-conditions"
+      />
 
       <div className="min-h-screen pt-32 pb-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
