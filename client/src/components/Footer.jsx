@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FaLinkedin, FaTwitter, FaGithub, FaInstagram, FaFacebook, FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaLinkedin, FaTwitter, FaGithub, FaInstagram, FaFacebook, FaPhone, FaEnvelope, FaMapMarkerAlt, FaLink } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -142,62 +142,71 @@ const Footer = () => {
             </h4>
             <div className="space-y-4">
               <p className="text-muted-grey text-sm">Abhishek</p>
-              <div className="space-y-2">
-                <div>
-                  <h5 className="text-soft-white text-xs mb-1">SOCIAL</h5>
-                  <div className="flex space-x-2">
-                    <a
-                      href="https://www.instagram.com/yup.abhishek"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-grey hover:text-accent text-xs transition-colors duration-300"
-                    >
-                      Instagram
-                    </a>
-                    <a
-                      href="https://wa.me/918750443995"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-muted-grey hover:text-accent text-xs transition-colors duration-300"
-                    >
-                      WhatsApp
-                    </a>
-                  </div>
+
+              {/* Social links: show icon + label on sm and up, icons-only on xs */}
+              <div>
+                <h5 className="text-soft-white text-xs mb-2">SOCIAL</h5>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.instagram.com/yup.abhishek"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-muted-grey hover:text-accent transition-colors duration-300"
+                    aria-label="Instagram"
+                  >
+                    <FaInstagram size={18} />
+                    <span className="ml-2 hidden sm:inline text-xs">Instagram</span>
+                  </a>
+
+                  <a
+                    href="https://wa.me/918750443995"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-muted-grey hover:text-accent transition-colors duration-300"
+                    aria-label="WhatsApp"
+                  >
+                    <FaPhone size={18} />
+                    <span className="ml-2 hidden sm:inline text-xs">WhatsApp</span>
+                  </a>
                 </div>
-                <div>
-                  <h5 className="text-soft-white text-xs mb-1">PROFILES</h5>
-                  <div className="space-y-1">
-                    <div>
-                      <a
-                        href="https://www.linkedin.com/in/yup-abhishek"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-grey hover:text-accent text-xs transition-colors duration-300"
-                      >
-                        LinkedIn
-                      </a>
-                    </div>
-                    <div>
-                      <a
-                        href="https://github.com/yupabhishek"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-grey hover:text-accent text-xs transition-colors duration-300"
-                      >
-                        GitHub
-                      </a>
-                    </div>
-                    <div>
-                      <a
-                        href="https://linktr.ee/yup.abhishek"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-muted-grey hover:text-accent text-xs transition-colors duration-300"
-                      >
-                        Linktree
-                      </a>
-                    </div>
-                  </div>
+              </div>
+
+              {/* Profiles: icons with labels on sm+ */}
+              <div>
+                <h5 className="text-soft-white text-xs mb-2">PROFILES</h5>
+                <div className="flex items-center gap-3">
+                  <a
+                    href="https://www.linkedin.com/in/yup-abhishek"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-muted-grey hover:text-accent transition-colors duration-300"
+                    aria-label="LinkedIn"
+                  >
+                    <FaLinkedin size={18} />
+                    <span className="ml-2 hidden sm:inline text-xs">LinkedIn</span>
+                  </a>
+
+                  <a
+                    href="https://github.com/yupabhishek"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-muted-grey hover:text-accent transition-colors duration-300"
+                    aria-label="GitHub"
+                  >
+                    <FaGithub size={18} />
+                    <span className="ml-2 hidden sm:inline text-xs">GitHub</span>
+                  </a>
+
+                  <a
+                    href="https://linktr.ee/yup.abhishek"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center text-muted-grey hover:text-accent transition-colors duration-300"
+                    aria-label="Linktree"
+                  >
+                    <FaLink size={16} />
+                    <span className="ml-2 hidden sm:inline text-xs">Linktree</span>
+                  </a>
                 </div>
               </div>
             </div>
