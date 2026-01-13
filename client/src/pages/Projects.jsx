@@ -10,7 +10,7 @@ const Projects = () => {
     <>
       <Seo
         title="Projects & Case Studies | Zenvyra Tech"
-        description="Real-world digital solutions and high-performance websites delivered by Zenvyra Tech."
+        description="High-performance digital projects delivered by Zenvyra Tech."
         pathname="/projects"
         image="/images/projects-og.jpg"
         keywords="portfolio, projects, case studies, web development, design, SEO"

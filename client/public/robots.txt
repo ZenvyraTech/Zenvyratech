@@ -1,7 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /
 
 Sitemap: https://www.zenvyratech.in/sitemap.xml
-
-# Crawl-delay can be set if needed by specific crawlers
-# Crawl-delay: 10

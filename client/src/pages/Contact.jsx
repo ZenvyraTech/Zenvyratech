@@ -39,7 +39,7 @@ const Contact = () => {
     <>
       <Seo
         title="Contact Zenvyra Tech | Let’s Build Something Scalable"
-        description="Get in touch with Zenvyra Tech for web development, SEO and digital solutions."
+        description="Get in touch with Zenvyra Tech for web development and SEO services."
         pathname="/contact"
         image="/images/contact-og.jpg"
         keywords="contact, get in touch, web development, SEO services, digital marketing, India"

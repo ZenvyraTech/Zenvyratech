@@ -61,7 +61,7 @@ const Home = () => {
     <>
       <Seo
         title="Zenvyra Tech | Web Development, SEO & Digital Solutions"
-        description="Performance-driven digital agency delivering scalable websites, SEO services and growth-focused digital systems."
+        description="Performance-driven digital agency delivering scalable websites, SEO services and digital growth systems."
         pathname="/"
       />
 

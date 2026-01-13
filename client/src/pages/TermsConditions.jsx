@@ -7,7 +7,7 @@ const TermsConditions = () => {
     <>
       <Seo
         title="Terms & Conditions | Zenvyra Tech"
-        description="Terms governing the use of Zenvyra Tech website and services."
+        description="Terms governing use of the Zenvyra Tech website."
         pathname="/terms-conditions"
       />
 

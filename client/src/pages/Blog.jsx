@@ -20,7 +20,7 @@ const Blog = () => {
     <>
       <Seo
         title="Blog | SEO & Web Growth Insights – Zenvyra Tech"
-        description="Actionable SEO strategies and web development insights by Zenvyra Tech."
+        description="Actionable SEO strategies and web development insights."
         pathname="/blog"
       />
 
