@@ -88,6 +88,8 @@ const Navbar = () => {
               <img
                 src={logoSvg}
                 alt="Zenvyra Tech"
+                loading="lazy"
+                decoding="async"
                 // responsive sizes: slightly larger on bigger screens for better presence
                 className="h-10 sm:h-12 md:h-14 w-auto object-contain block"
               />

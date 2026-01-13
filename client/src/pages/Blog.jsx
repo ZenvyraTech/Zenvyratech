@@ -48,49 +48,54 @@ const Blog = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {posts.map((post, index) => (
                 <AnimatedSection key={post.id} delay={index * 0.1}>
-                  <Link to={`/blog/${post.slug}`}>
-                    <GlassCard className="h-full hover:border-accent/70 transition-all duration-300 p-0 overflow-hidden">
-                      {/* Featured Image Placeholder */}
-                      <div className="h-48 bg-gradient-to-br from-accent/20 to-steel flex items-center justify-center">
-                        <span className="text-3xl font-bold text-soft-white/10">
-                          {post.title.substring(0, 1)}
-                        </span>
-                      </div>
-
-                      {/* Post Content */}
-                      <div className="p-6">
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-xs text-accent font-semibold uppercase tracking-wide">
-                            {post.category}
-                          </span>
-                          <span className="text-xs text-muted-grey">
-                            {post.readTime} min read
+                  <article itemScope itemType="https://schema.org/Article">
+                    <a href={`/blog/${post.slug}`} itemProp="url" className="block">
+                      <GlassCard className="h-full hover:border-accent/70 transition-all duration-300 p-0 overflow-hidden">
+                        {/* Featured Image Placeholder */}
+                        <div className="h-48 bg-gradient-to-br from-accent/20 to-steel flex items-center justify-center">
+                          <span className="text-3xl font-bold text-soft-white/10">
+                            {post.title.substring(0, 1)}
                           </span>
                         </div>
 
-                        <h2 className="text-xl font-semibold mb-3 text-soft-white hover:text-accent transition-colors duration-300">
-                          {post.title}
-                        </h2>
+                        {/* Post Content */}
+                        <div className="p-6">
+                          <div className="flex items-center justify-between mb-3">
+                            <span className="text-xs text-accent font-semibold uppercase tracking-wide">
+                              {post.category}
+                            </span>
+                            <span className="text-xs text-muted-grey">
+                              {post.readTime} min read
+                            </span>
+                          </div>
 
-                        <p className="text-muted-grey mb-4 leading-relaxed line-clamp-3">
-                          {post.excerpt}
-                        </p>
+                          <h2 itemProp="headline" className="text-xl font-semibold mb-3 text-soft-white hover:text-accent transition-colors duration-300">
+                            <span itemProp="name">{post.title}</span>
+                          </h2>
 
-                        <div className="flex items-center justify-between pt-4 border-t border-steel">
-                          <span className="text-sm text-muted-grey">
-                            {new Date(post.createdAt).toLocaleDateString('en-US', {
-                              year: 'numeric',
-                              month: 'short',
-                              day: 'numeric',
-                            })}
-                          </span>
-                          <span className="text-accent text-sm font-medium">
-                            Read More →
-                          </span>
+                          <p itemProp="description" className="text-muted-grey mb-4 leading-relaxed line-clamp-3">
+                            {post.excerpt}
+                          </p>
+
+                          <div className="flex items-center justify-between pt-4 border-t border-steel">
+                            <time itemProp="datePublished" dateTime={post.createdAt} className="text-sm text-muted-grey">
+                              {new Date(post.createdAt).toLocaleDateString('en-US', {
+                                year: 'numeric',
+                                month: 'short',
+                                day: 'numeric',
+                              })}
+                            </time>
+                            <span className="text-accent text-sm font-medium" aria-hidden>
+                              Read More →
+                            </span>
+                          </div>
+
+                          <meta itemProp="author" content={post.author} />
+                          <meta itemProp="url" content={`/blog/${post.slug}`} />
                         </div>
-                      </div>
-                    </GlassCard>
-                  </Link>
+                      </GlassCard>
+                    </a>
+                  </article>
                 </AnimatedSection>
               ))}
             </div>

@@ -3,6 +3,8 @@ import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 import { FaCode, FaShoppingCart, FaSearch, FaBullhorn, FaPalette, FaCogs, FaCheck } from 'react-icons/fa';
 import { services } from '../content/services';
+import { blogPosts } from '../content/blogs';
+
 
 const Services = () => {
 
@@ -64,7 +66,24 @@ const Services = () => {
                       <p className="text-sm text-muted-grey mb-2">Technologies & Tools:</p>
                       <p className="text-soft-white">{service.technologies.join(', ')}</p>
                     </div>
-                    
+
+                    {/* Related Articles (internal linking) */}
+                    {(() => {
+                      const related = blogPosts.filter(p => p.category && p.category.toLowerCase() === service.title.toLowerCase())
+                        .concat(blogPosts.filter(p => p.tags && p.tags.map(t=>t.toLowerCase()).includes(service.title.toLowerCase())));
+                      const unique = Array.from(new Map(related.map(r => [r.slug, r])).values());
+                      return unique.length > 0 ? (
+                        <div className="mt-6">
+                          <h3 className="text-sm text-soft-white font-semibold mb-2">Related articles</h3>
+                          <ul className="text-muted-grey space-y-2">
+                            {unique.slice(0,3).map(r => (
+                              <li key={r.id}><a href={`/blog/${r.slug}`} className="text-accent hover:text-soft-white">{r.title}</a></li>
+                            ))}
+                          </ul>
+                        </div>
+                      ) : null;
+                    })()}
+
                     {/* Action Buttons */}
                     <div className="flex flex-col sm:flex-row gap-4 mt-6">
                       <a

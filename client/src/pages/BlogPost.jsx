@@ -48,7 +48,12 @@ const BlogPost = () => {
       />
 
       <div className="min-h-screen pt-32 pb-20">
-        <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article itemScope itemType="https://schema.org/Article" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <meta itemProp="headline" content={post.title} />
+          <meta itemProp="author" content={post.author} />
+          <meta itemProp="datePublished" content={post.createdAt} />
+          <meta itemProp="url" content={`/blog/${post.slug}`} />
+
           {/* Back Button */}
           <AnimatedSection>
             <Link
@@ -80,6 +85,18 @@ const BlogPost = () => {
                 <span>{post.readTime} min read</span>
               </div>
             </div>
+
+            {post.featuredImage && (
+              <div className="mb-8">
+                <img
+                  src={post.featuredImage}
+                  alt={post.title}
+                  loading="lazy"
+                  className="w-full rounded-lg object-cover"
+                />
+              </div>
+            )}
+
             <div className="w-full h-1 bg-gradient-to-r from-accent to-transparent mb-12"></div>
           </AnimatedSection>
 
