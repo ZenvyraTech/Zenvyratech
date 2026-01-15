@@ -11,11 +11,11 @@ const Services = () => {
   return (
     <>
       <Seo
-        title="Services | Web Development & SEO – Zenvyra Tech"
-        description="Full-stack web development, SEO optimization, UI/UX and digital growth services."
+        title="Digital Services | Web Development & SEO Agency"
+        description="Professional web development, technical SEO, and scalable digital solutions for growing businesses."
         pathname="/services"
         image="/images/services-og.jpg"
-        keywords="web development, SEO services, e-commerce, UI/UX design, digital marketing, automation"
+        keywords="web development agency, SEO services Delhi, scalable web applications, technical SEO, digital transformation"
       />
 
       <div className="min-h-screen pt-32 pb-20">
@@ -27,9 +27,9 @@ const Services = () => {
             </h1>
             <div className="w-32 h-1 bg-accent mb-12" />
             <p className="text-xl md:text-2xl text-muted-grey leading-relaxed max-w-4xl">
-              End-to-end digital solutions built with precision and performance in mind.
+              Comprehensive digital solutions engineered for performance and scalable growth.
               <br />
-              From concept to deployment, we handle every detail.
+              From strategy to deployment, we deliver results-driven systems.
             </p>
           </AnimatedSection>
         </section>

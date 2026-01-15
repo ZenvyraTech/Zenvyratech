@@ -36,9 +36,10 @@ const SEOServices = () => {
   return (
     <>
       <Seo
-        title="SEO Services in India | Zenvyra Tech"
-        description="Data-driven SEO services to increase rankings, traffic and conversions."
+        title="Technical SEO Services | Organic Growth Agency"
+        description="Professional technical SEO and data-driven strategies to boost organic traffic and search rankings sustainably."
         pathname="/seo-services"
+        keywords="technical SEO services, organic traffic growth, search engine optimization, SEO agency Delhi, keyword ranking"
       />
 
       <div className="min-h-screen pt-32 pb-20">
@@ -50,10 +51,9 @@ const SEOServices = () => {
             </h1>
             <div className="w-32 h-1 bg-accent mb-12" />
             <p className="text-xl md:text-2xl text-muted-grey leading-relaxed max-w-4xl">
-              Performance-focused SEO strategies built for{' '}
-              <span className="text-accent font-semibold">long-term organic growth</span>.
+              Data-driven SEO strategies engineered for <span className="text-accent font-semibold">sustainable organic growth</span>.
               <br />
-              We don't chase algorithms—we build sustainable search visibility.
+              Technical optimization meets strategic content for lasting search visibility.
             </p>
           </AnimatedSection>
         </section>

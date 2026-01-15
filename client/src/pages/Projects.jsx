@@ -9,11 +9,11 @@ const Projects = () => {
   return (
     <>
       <Seo
-        title="Projects & Case Studies | Zenvyra Tech"
-        description="High-performance digital projects delivered by Zenvyra Tech."
+        title="Portfolio | Scalable Web Projects & Case Studies"
+        description="Results-driven digital projects showcasing scalable web applications and SEO-optimized solutions."
         pathname="/projects"
         image="/images/projects-og.jpg"
-        keywords="portfolio, projects, case studies, web development, design, SEO"
+        keywords="web development portfolio, scalable projects, SEO case studies, digital solutions, technical projects"
       />
 
       <div className="min-h-screen pt-32 pb-20">
@@ -25,9 +25,9 @@ const Projects = () => {
             </h1>
             <div className="w-32 h-1 bg-accent mb-12" />
             <p className="text-xl md:text-2xl text-muted-grey leading-relaxed max-w-4xl">
-              A selection of projects we've built.
+              Performance-driven projects engineered for scalability and measurable results.
               <br />
-              Each one designed with precision and built to perform.
+              Each solution built with clean architecture and strategic optimization.
             </p>
           </AnimatedSection>
         </section>

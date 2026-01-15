@@ -53,8 +53,7 @@ const Contact = () => {
             </h1>
             <div className="w-32 h-1 bg-accent mx-auto mb-8" />
             <p className="text-xl text-muted-grey max-w-3xl mx-auto">
-              Have a project in mind? Let's discuss how we can help you build
-              a digital solution that works.
+              Have a digital project in mind? Let's discuss how we can engineer a scalable solution that delivers measurable results.
             </p>
           </AnimatedSection>
 

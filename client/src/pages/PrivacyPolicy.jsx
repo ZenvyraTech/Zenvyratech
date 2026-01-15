@@ -6,9 +6,10 @@ const PrivacyPolicy = () => {
   return (
     <>
       <Seo
-        title="Privacy Policy | Zenvyra Tech"
-        description="How Zenvyra Tech collects, uses and protects user data."
+        title="Privacy Policy | Data Protection Commitment"
+        description="Zenvyra Tech's commitment to protecting user privacy and responsible data handling practices."
         pathname="/privacy-policy"
+        robots="noindex, follow"
       />
 
       <div className="min-h-screen pt-32 pb-20">

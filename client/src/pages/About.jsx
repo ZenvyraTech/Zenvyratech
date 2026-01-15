@@ -26,9 +26,10 @@ const About = () => {
   return (
     <>
       <Seo
-        title="About Zenvyra Tech | Digital Growth Engineers"
-        description="Learn about Zenvyra Tech’s mission, vision and expertise in building scalable digital systems."
+        title="About Zenvyra Tech | Digital Systems Agency"
+        description="Discover Zenvyra Tech's mission to build scalable, performance-driven digital solutions for growing businesses."
         pathname="/about"
+        keywords="digital agency, web development company, SEO services, scalable systems, Delhi"
       />
 
       <div className="min-h-screen pt-32 pb-20">
@@ -55,8 +56,7 @@ const About = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-xl md:text-2xl text-muted-grey leading-relaxed max-w-4xl"
             >
-              Zenvyra Tech is a digital engineering studio focused on building
-              <span className="text-accent font-semibold"> scalable, performance-driven digital systems</span>.
+              Zenvyra Tech builds <span className="text-accent font-semibold">scalable digital systems</span> that drive measurable business growth through clean code and strategic SEO.
             </motion.p>
           </AnimatedSection>
         </section>
@@ -70,10 +70,7 @@ const About = () => {
                   Our Mission
                 </h2>
                 <p className="text-lg md:text-xl text-muted-grey leading-relaxed">
-                  We exist to help businesses build digital systems that are{' '}
-                  <span className="text-soft-white font-semibold">simple, effective, and built to last</span>.
-                  We don't chase trends. We focus on fundamentals—clean code, clear strategy,
-                  and sustainable growth.
+                  We build <span className="text-soft-white font-semibold">performance-driven digital systems</span> that scale with your business. Our approach combines clean code, strategic SEO, and sustainable growth practices.
                 </p>
               </div>
             </AnimatedSection>
@@ -145,39 +142,31 @@ const About = () => {
 
                   <div className="space-y-4">
                     <p className="text-lg text-muted-grey leading-relaxed">
-                      Abhishek founded Zenvyra Tech with a simple belief:{' '}
-                      <span className="text-soft-white font-semibold">
-                        digital systems should be built to work, not just look good
-                      </span>.
+                      Founded Zenvyra Tech with the belief that <span className="text-soft-white font-semibold">digital systems should deliver results, not just aesthetics</span>.
                     </p>
 
                     <p className="text-lg text-muted-grey leading-relaxed">
-                      With a focus on{' '}
-                      <span className="text-accent">clean architecture</span>,{' '}
-                      <span className="text-accent">SEO-first thinking</span>, and{' '}
-                      <span className="text-accent">long-term digital growth</span>,
-                      he leads projects with precision and a systems mindset.
+                      Specializes in <span className="text-accent">scalable web development</span>, <span className="text-accent">technical SEO</span>, and <span className="text-accent">growth-oriented digital solutions</span> for forward-thinking businesses.
                     </p>
 
                     <p className="text-lg text-muted-grey leading-relaxed">
-                      Every project at Zenvyra is approached with the same principle:
-                      <span className="text-soft-white italic"> build it right, build it to last</span>.
+                      Leads projects with a systems-first approach: <span className="text-soft-white italic">engineered for performance, built to scale</span>.
                     </p>
                   </div>
 
                   <div className="pt-6">
                     <div className="flex flex-wrap gap-3">
                       <span className="px-4 py-2 bg-steel/50 text-soft-white rounded text-sm">
-                        Web Development
+                        Scalable Web Apps
                       </span>
                       <span className="px-4 py-2 bg-steel/50 text-soft-white rounded text-sm">
-                        SEO Strategy
+                        Technical SEO
                       </span>
                       <span className="px-4 py-2 bg-steel/50 text-soft-white rounded text-sm">
-                        System Design
+                        System Architecture
                       </span>
                       <span className="px-4 py-2 bg-steel/50 text-soft-white rounded text-sm">
-                        Digital Growth
+                        Growth Engineering
                       </span>
                     </div>
                   </div>
@@ -203,16 +192,16 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {[
                 {
-                  title: 'Honesty First',
-                  description: 'We tell you what you need, not what you want to hear.',
+                  title: 'Transparency',
+                  description: 'Clear communication and honest project timelines.',
                 },
                 {
-                  title: 'Quality Over Speed',
-                  description: 'We build systems that work—even if it takes longer.',
+                  title: 'Performance Focus',
+                  description: 'Engineered solutions that deliver measurable results.',
                 },
                 {
-                  title: 'Long-Term Thinking',
-                  description: 'Every project is designed to grow with you.',
+                  title: 'Scalable Growth',
+                  description: 'Systems designed to expand with your business needs.',
                 },
               ].map((value, index) => (
                 <AnimatedSection key={index} delay={index * 0.15}>

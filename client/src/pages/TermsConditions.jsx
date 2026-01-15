@@ -6,9 +6,10 @@ const TermsConditions = () => {
   return (
     <>
       <Seo
-        title="Terms & Conditions | Zenvyra Tech"
-        description="Terms governing use of the Zenvyra Tech website."
+        title="Terms of Service | Digital Solutions Agreement"
+        description="Legal terms governing Zenvyra Tech's digital services, web development, and SEO offerings."
         pathname="/terms-conditions"
+        robots="noindex, follow"
       />
 
       <div className="min-h-screen pt-32 pb-20">

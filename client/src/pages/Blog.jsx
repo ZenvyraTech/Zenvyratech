@@ -19,9 +19,10 @@ const Blog = () => {
   return (
     <>
       <Seo
-        title="Blog | SEO & Web Growth Insights – Zenvyra Tech"
-        description="Actionable SEO strategies and web development insights."
+        title="Digital Growth Blog | SEO & Web Development"
+        description="Expert insights on technical SEO, scalable web development, and performance-driven digital strategies."
         pathname="/blog"
+        keywords="SEO blog, web development insights, technical SEO, digital growth, scalable systems"
       />
 
       <div className="min-h-screen pt-32 pb-20">
@@ -33,7 +34,7 @@ const Blog = () => {
             </h1>
             <div className="w-32 h-1 bg-accent mb-12" />
             <p className="text-xl md:text-2xl text-muted-grey leading-relaxed max-w-4xl">
-              Insights on web development, SEO, digital growth, and building systems that work.
+              Expert insights on technical SEO, scalable web development, and performance-driven digital strategies for growing businesses.
             </p>
           </AnimatedSection>
         </section>
