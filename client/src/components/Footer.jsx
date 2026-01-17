@@ -26,11 +26,21 @@ const Footer = () => {
               <div className="space-y-2 text-sm">
                 <div className="flex items-center text-muted-grey">
                   <FaEnvelope className="mr-3 text-accent" />
-                  <span>zenvyratech@gmail.com</span>
+                  <a href="mailto:contact@zenvyratech.in" className="hover:text-accent transition-colors duration-300">
+                    contact@zenvyratech.in
+                  </a>
+                </div>
+                <div className="flex items-center text-muted-grey">
+                  <FaEnvelope className="mr-3 text-accent" />
+                  <a href="mailto:support@zenvyratech.in" className="hover:text-accent transition-colors duration-300">
+                    support@zenvyratech.in
+                  </a>
                 </div>
                 <div className="flex items-center text-muted-grey">
                   <FaPhone className="mr-3 text-accent" />
-                  <span>+91 8750443995</span>
+                  <a href="tel:+918750443995" className="hover:text-accent transition-colors duration-300">
+                    +91 8750443995
+                  </a>
                 </div>
                 <div className="flex items-center text-muted-grey">
                   <FaMapMarkerAlt className="mr-3 text-accent" />

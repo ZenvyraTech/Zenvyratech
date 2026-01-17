@@ -52,7 +52,7 @@ const PrivacyPolicy = () => {
 
                 <h2 className="text-2xl font-bold text-soft-white mb-4">Contact Us</h2>
                 <p className="text-muted-grey">
-                  If you have questions about this privacy policy, please contact us at contact@zenvyratech.com
+                  If you have questions about this privacy policy, please contact us at <a href="mailto:contact@zenvyratech.in" className="text-accent hover:underline">contact@zenvyratech.in</a>
                 </p>
               </div>
             </GlassCard>

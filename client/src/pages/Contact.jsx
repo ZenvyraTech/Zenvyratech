@@ -5,7 +5,7 @@ import AnimatedSection from '../components/AnimatedSection';
 import GlassCard from '../components/GlassCard';
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("xeeeqaor"); // Formspree form ID - make sure this matches your form ID from https://formspree.io
+  const [state, handleSubmit] = useForm("meeeebro"); // Formspree form ID - make sure this matches your form ID from https://formspree.io
   
   // Update the contact details
   const contactInfo = {
@@ -156,6 +156,15 @@ const Contact = () => {
                         className="text-accent hover:text-soft-white transition-colors duration-300"
                       >
                         {contactInfo.email}
+                      </a>
+                    </div>
+                    <div>
+                      <p className="text-sm text-muted-grey mb-1">Support</p>
+                      <a
+                        href="mailto:support@zenvyratech.in"
+                        className="text-accent hover:text-soft-white transition-colors duration-300"
+                      >
+                        support@zenvyratech.in
                       </a>
                     </div>
                     <div>
