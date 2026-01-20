@@ -20,7 +20,7 @@ const Reviews = () => {
             "url": "https://www.zenvyratech.in",
             "logo": "https://www.zenvyratech.in/logo.svg",
             "sameAs": [
-              "https://www.google.com/maps/place/Zenvyra+Tech",
+              "https://share.google/T0wqx59pLXw61AxUx",
               "https://www.linkedin.com/company/zenvyratech",
               "https://www.zenvyratech.in"
             ],

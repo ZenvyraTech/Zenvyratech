@@ -4,7 +4,7 @@ import { HelmetProvider, Helmet } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollProgress from './components/ScrollProgress';
-import CustomCursor from './components/CustomCursor';
+
 import PageTransition from './components/PageTransition';
 // Code-splitting lazy imports for faster initial load
 const Home = lazy(() => import('./pages/Home'));
@@ -26,7 +26,6 @@ function App() {
       <Router>
         <div className="min-h-screen bg-charcoal text-soft-white relative">
           <GlobalMetadata />
-          <CustomCursor />
           <ScrollProgress />
           <Navbar />
           <Main />
@@ -148,7 +147,8 @@ function GlobalMetadata() {
             "availableLanguage": "en"
           },
           "sameAs": [
-            "https://www.google.com/maps/place/Zenvyra+Tech",
+            "https://g.page/r/CZ59KVvRzmZcEAE/review",
+            "https://share.google/T0wqx59pLXw61AxUx",
             "https://www.linkedin.com/company/zenvyratech",
             "https://www.zenvyratech.in"
           ]

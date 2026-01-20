@@ -99,7 +99,7 @@ const GoogleReviewsSection = ({ title = "What Clients Say" }) => {
             <meta itemProp="worstRating" content="1" />
             <meta itemProp="reviewCount" content={googleReviews.length.toString()} />
             <a 
-              href="https://www.google.com/maps/place/Zenvyra+Tech" 
+              href="https://g.page/r/CZ59KVvRzmZcEAE/review" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 bg-steel/50 px-4 py-2 rounded-lg hover:bg-steel/70 transition-colors duration-300"
@@ -157,7 +157,7 @@ const AllGoogleReviews = () => {
           
           {/* Google Rating Display */}
           <a 
-            href="https://www.google.com/maps/place/Zenvyra+Tech" 
+            href="https://g.page/r/CZ59KVvRzmZcEAE/review" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center space-x-2 bg-steel/50 px-4 py-2 rounded-lg hover:bg-steel/70 transition-colors duration-300"
@@ -185,12 +185,12 @@ const AllGoogleReviews = () => {
 
         <div className="text-center mt-12">
           <a
-            href="https://www.google.com/maps/place/Zenvyra+Tech" // Replace with actual Google Maps link
+            href="https://share.google/T0wqx59pLXw61AxUx"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-6 py-3 bg-accent text-charcoal font-semibold rounded-lg hover:bg-soft-white transition-all duration-300"
           >
-            View on Google
+View on Google Maps
             <span className="ml-2">→</span>
           </a>
         </div>

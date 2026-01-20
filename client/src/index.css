@@ -17,7 +17,7 @@
     @apply bg-charcoal text-soft-white;
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
-    cursor: none; /* Hide the default cursor */
+
   }
 
   /* Headings use the Orbitron tech-style font */
