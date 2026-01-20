@@ -268,29 +268,7 @@ const Home = () => {
           </div>
         </section>
 
-        {/* Founder Preview */}
-        <section className="py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <AnimatedSection>
-              <GlassCard className="text-center max-w-3xl mx-auto">
-                <h3 className="text-2xl font-semibold mb-4 text-soft-white">
-                  Founded by Abhishek
-                </h3>
-                <p className="text-lg text-muted-grey leading-relaxed mb-6">
-                  Focused on building clean systems, honest solutions,
-                  <br />
-                  and digital products that actually work.
-                </p>
-                <Link
-                  to="/about"
-                  className="inline-block text-accent hover:text-soft-white transition-colors duration-300"
-                >
-                  Learn More →
-                </Link>
-              </GlassCard>
-            </AnimatedSection>
-          </div>
-        </section>
+
 
         {/* Google Reviews Section */}
         <GoogleReviewsSection />
@@ -382,7 +360,29 @@ const Home = () => {
             </div>
           </div>
         </section>
-
+        {/* Founder Preview */}
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection>
+              <GlassCard className="text-center max-w-3xl mx-auto">
+                <h3 className="text-2xl font-semibold mb-4 text-soft-white">
+                  Founded by Abhishek
+                </h3>
+                <p className="text-lg text-muted-grey leading-relaxed mb-6">
+                  Focused on building clean systems, honest solutions,
+                  <br />
+                  and digital products that actually work.
+                </p>
+                <Link
+                  to="/about"
+                  className="inline-block text-accent hover:text-soft-white transition-colors duration-300"
+                >
+                  Learn More →
+                </Link>
+              </GlassCard>
+            </AnimatedSection>
+          </div>
+        </section>
         {/* CTA Strip */}
         <section className="py-24 bg-gradient-to-r from-graphite to-steel">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
