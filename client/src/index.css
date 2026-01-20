@@ -26,47 +26,7 @@
     letter-spacing: 0.02em;
   }
 
-  /* Light theme overrides when `.light` is present on <html> */
-  html.light body {
-    /* Soft neutral background with a faint cool tint */
-    background: linear-gradient(180deg, #fbfdff 0%, #f6f9fb 100%);
-    color: #0b0d10; /* dark text */
-    cursor: default;
-  }
 
-  /* Override commonly used bg/text classes for light theme (polished look) */
-  html.light .bg-charcoal { background-color: #fbfdff !important; }
-  html.light .bg-graphite { background-color: #f7f9fb !important; }
-  html.light .bg-steel { background-color: #f1f4f7 !important; }
-  html.light .text-soft-white { color: #0b0d10 !important; }
-  html.light .text-muted-grey { color: #6b7280 !important; }
-
-  /* Lighter glass effect for the light theme */
-  html.light .glass-effect {
-    background: rgba(255,255,255,0.72);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(11,13,16,0.06);
-    box-shadow: 0 6px 24px rgba(11,13,16,0.04);
-  }
-
-  /* Adjust glow / neon intensity in light theme so it's subtle and readable */
-  html.light .text-glow {
-    text-shadow: 0 0 8px rgba(60, 242, 255, 0.25);
-  }
-
-  /* Light-themed neon buttons (darker accent for contrast) */
-  html.light .neon-btn {
-    background: linear-gradient(90deg, rgba(0,128,143,0.06), rgba(0,128,143,0.02));
-    border: 1px solid rgba(0,128,143,0.12);
-    color: #05323b;
-  }
-
-  html.light .neon-btn:hover {
-    box-shadow: 0 6px 30px rgba(0,128,143,0.08);
-  }
-
-  /* So the subtle noise texture doesn't dominate in light mode */
-  html.light body::before { opacity: 0.02; }
 
   html {
     scroll-behavior: smooth;

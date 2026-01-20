@@ -1,51 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaSun, FaMoon } from 'react-icons/fa';
+
 
 // Resolve public assets reliably in both dev and prod builds
 // Use the SVG text-logo as primary for crisp scaling
 const logoSvg = new URL('/logo.svg', import.meta.url).href;
 
-// ThemeToggle component — toggles `light` class on <html> and persists preference
-function ThemeToggle() {
-  const [theme, setTheme] = useState(() => {
-    try {
-      const stored = localStorage.getItem('theme');
-      if (stored) return stored;
-    } catch {}
-    // If no stored preference, respect OS preference
-    try {
-      if (typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-        return 'light';
-      }
-    } catch {}
-    return 'dark';
-  });
 
-  useEffect(() => {
-    const doc = document.documentElement;
-    if (theme === 'light') {
-      doc.classList.add('light');
-    } else {
-      doc.classList.remove('light');
-    }
-    try {
-      localStorage.setItem('theme', theme);
-    } catch {}
-  }, [theme]);
-
-  return (
-    <button
-      onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}
-      className="p-2 rounded-md bg-steel/60 hover:bg-steel/80 text-soft-white transition-colors duration-200 flex items-center justify-center"
-      aria-label="Toggle theme"
-      title="Toggle theme"
-    >
-      {theme === 'light' ? <FaMoon size={16} /> : <FaSun size={16} />}
-    </button>
-  );
-}
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -67,6 +29,7 @@ const Navbar = () => {
     { name: 'Services', path: '/services' },
     { name: 'SEO', path: '/seo-services' },
     { name: 'Projects', path: '/projects' },
+    { name: 'Reviews', path: '/reviews' },
     { name: 'Blog', path: '/blog' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -124,11 +87,8 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Right: Theme toggle (desktop) + Mobile Menu Button */}
+          {/* Right: Mobile Menu Button */}
           <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center">
-              <ThemeToggle />
-            </div>
 
             {/* Mobile Menu Button */}
             <button
@@ -182,6 +142,7 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+
             </div>
           </motion.div>
         )}

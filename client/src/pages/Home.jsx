@@ -6,6 +6,7 @@ import GlassCard from '../components/GlassCard';
 import { FaCode, FaShoppingCart, FaSearch, FaBullhorn, FaPalette, FaCogs } from 'react-icons/fa';
 import HoverAnimation from '../components/HoverAnimation';
 import { staggerContainer, textVariant } from '../utils/animationUtils';
+import { GoogleReviewsSection } from '../components/GoogleReviews';
 
 const Home = () => {
   const services = [
@@ -67,7 +68,7 @@ const Home = () => {
 
       <div className="min-h-screen">
         {/* Hero Section */}
-  <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-cyber cyber-grid">
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-graphite to-charcoal cyber-grid">
           {/* Animated Background */}
           <div className="absolute inset-0 opacity-20">
             <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent"></div>
@@ -288,6 +289,97 @@ const Home = () => {
                 </Link>
               </GlassCard>
             </AnimatedSection>
+          </div>
+        </section>
+
+        {/* Google Reviews Section */}
+        <GoogleReviewsSection />
+
+        {/* Who We Work With */}
+        <section className="py-24 bg-graphite">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-soft-white">
+                Who We Work With
+              </h2>
+              <div className="w-20 h-1 bg-accent mx-auto mb-8"></div>
+              <p className="text-xl text-muted-grey max-w-3xl mx-auto mb-12">
+                We partner with innovative startups, established local businesses, and growing e-commerce brands
+                to deliver digital solutions that drive growth and performance.
+              </p>
+            </AnimatedSection>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold mb-4 text-soft-white">Startups & Entrepreneurs</h3>
+                <p className="text-muted-grey">
+                  Building from the ground up? We help startups establish a strong digital foundation
+                  with scalable web solutions and targeted marketing strategies.
+                </p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold mb-4 text-soft-white">Local Businesses</h3>
+                <p className="text-muted-grey">
+                  Looking to expand your local reach? Our SEO and digital marketing solutions
+                  help local businesses connect with customers in their community.
+                </p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-2xl font-semibold mb-4 text-soft-white">E-commerce Brands</h3>
+                <p className="text-muted-grey">
+                  Growing your online sales? We optimize e-commerce platforms for
+                  conversion, user experience, and long-term growth.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Why Clients Choose Zenvyra */}
+        <section className="py-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <AnimatedSection className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4 text-soft-white">
+                Why Clients Choose Zenvyra
+              </h2>
+              <div className="w-20 h-1 bg-accent mx-auto mb-8"></div>
+            </AnimatedSection>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-2xl font-semibold mb-6 text-soft-white">
+                  Systems Thinking Approach
+                </h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start space-x-3">
+                    <span className="text-accent mt-1">→</span>
+                    <span className="text-muted-grey">We build systems, not just websites</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <span className="text-accent mt-1">→</span>
+                    <span className="text-muted-grey">Long-term performance over quick fixes</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <span className="text-accent mt-1">→</span>
+                    <span className="text-muted-grey">Measurable results and ROI tracking</span>
+                  </li>
+                  <li className="flex items-start space-x-3">
+                    <span className="text-accent mt-1">→</span>
+                    <span className="text-muted-grey">Transparent processes and clear communication</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <AnimatedSection delay={0.3}>
+                <GlassCard hover={false} className="p-8">
+                  <p className="text-lg text-muted-grey leading-relaxed">
+                    At Zenvyra Tech, we specialize in creating digital systems that grow with your business.
+                    Our approach focuses on clean code, strategic SEO, and user-centric design that delivers
+                    real results. We don't just build websites – we engineer solutions that scale.
+                  </p>
+                </GlassCard>
+              </AnimatedSection>
+            </div>
           </div>
         </section>
 
