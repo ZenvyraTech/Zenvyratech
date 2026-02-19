@@ -188,5 +188,31 @@ client: 'Salon',
 results: ['Premium positioning'],
 seoDescription: 'Salon website.',
 seoKeywords: ['salon']
+},
+
+{
+  id: 10,
+  title: 'Fit Flow Pro Gym – Fitness & Personal Training',
+  slug: 'fit-flow-pro',
+  category: 'Fitness',
+  description: 'Lead-focused gym platform designed to increase memberships and enquiries.',
+  fullDescription: `Conversion-driven fitness website built for local lead generation, WhatsApp enquiries, and strong brand positioning. Focused on performance, speed, and mobile-first user experience.`,
+  technologies: ['React', 'Tailwind CSS', 'Vercel'],
+  preview: true,
+  image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://fitflow-pro-lake.vercel.app/',
+  gallery: [
+    'https://image.thum.io/get/width/1200/crop/800/noanimate/https://fitflow-pro-lake.vercel.app/'
+  ],
+  liveUrl: 'https://fitflow-pro-lake.vercel.app/',
+  year: 2026,
+  client: 'Fit Flow Pro Gym',
+  results: [
+    'Lead generation focused',
+    'Mobile-first UX',
+    'Local SEO ready'
+  ],
+  seoDescription: 'Fitness and gym website focused on lead generation and memberships.',
+  seoKeywords: ['gym', 'fitness', 'personal training', 'local gym']
 }
+
 ];
