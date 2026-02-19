@@ -1,0 +1,233 @@
+import Link from 'next/link';
+import Seo from '../../../components/Seo';
+import AnimatedSection from '../../../components/AnimatedSection';
+import { blogPosts } from '../../../content/blogs';
+
+// Generate static params for all blog posts
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+// Generate metadata for each blog post
+export async function generateMetadata({ params }) {
+  const post = blogPosts.find(p => p.slug === params.slug);
+  
+  if (!post) {
+    return {
+      title: "Post Not Found | Zenvyra Tech Blog",
+      description: "The requested blog post could not be found.",
+    };
+  }
+
+  return {
+    title: `${post.title} | Zenvyra Tech Blog`,
+    description: post.seoDescription || post.excerpt,
+    alternates: {
+      canonical: `https://www.zenvyratech.in/blog/${post.slug}`,
+    },
+    openGraph: {
+      title: `${post.title} | Zenvyra Tech Blog`,
+      description: post.seoDescription || post.excerpt,
+      url: `https://www.zenvyratech.in/blog/${post.slug}`,
+      type: "article",
+      publishedTime: post.createdAt,
+      modifiedTime: post.updatedAt || post.createdAt,
+      authors: [post.author],
+      tags: post.tags || [post.category],
+      images: [
+        {
+          url: post.featuredImage || "/founder.png",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${post.title} | Zenvyra Tech Blog`,
+      description: post.seoDescription || post.excerpt,
+      images: [post.featuredImage || "/founder.png"],
+    },
+    keywords: post.seoKeywords ? [...post.seoKeywords, post.category] : [post.category, ...post.tags || []],
+  };
+}
+
+const BlogPost = ({ params }) => {
+  const post = blogPosts.find(p => p.slug === params.slug);
+
+  if (!post) {
+    return (
+      <div className="min-h-screen pt-32 pb-20 flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-soft-white mb-4">Post Not Found</h1>
+          <Link href="/blog" className="text-accent hover:text-soft-white">
+            ← Back to Blog
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  // Article JSON-LD schema
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://www.zenvyratech.in/blog/${post.slug}`
+    },
+    "headline": post.title,
+    "description": post.seoDescription || post.excerpt,
+    "image": post.featuredImage || "/founder.png",
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Zenvyra Tech",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/logo.png"
+      }
+    },
+    "datePublished": post.createdAt,
+    "dateModified": post.updatedAt || post.createdAt,
+    "articleSection": post.category,
+    "keywords": post.seoKeywords ? [...post.seoKeywords, post.category] : [post.category, ...(post.tags || [])]
+  };
+
+  // Organization JSON-LD schema
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Zenvyra Tech",
+    "url": "https://www.zenvyratech.in",
+    "logo": "https://www.zenvyratech.in/logo.svg",
+    "sameAs": [
+      "https://www.linkedin.com/company/zenvyratech",
+      "https://twitter.com/zenvyratech",
+      "https://www.facebook.com/zenvyratech"
+    ]
+  };
+
+  return (
+    <>
+      <Seo
+        title={`${post.title} | Zenvyra Tech Blog`}
+        description={post.seoDescription || post.excerpt}
+        pathname={`/blog/${post.slug}`}
+        image={post.featuredImage || '/founder.png'}
+        type="article"
+        keywords={post.seoKeywords ? post.seoKeywords.join(', ') : post.tags ? post.tags.join(', ') : post.category}
+      />
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
+
+      <div className="min-h-screen pt-32 pb-20">
+        <article itemScope itemType="https://schema.org/Article" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <meta itemProp="headline" content={post.title} />
+          <meta itemProp="author" content={post.author} />
+          <meta itemProp="datePublished" content={post.createdAt} />
+          <meta itemProp="url" content={`/blog/${post.slug}`} />
+
+          {/* Back Button */}
+          <AnimatedSection>
+            <Link
+              href="/blog"
+              className="inline-flex items-center text-muted-grey hover:text-accent transition-colors duration-300 mb-8"
+            >
+              ← Back to Blog
+            </Link>
+          </AnimatedSection>
+
+          {/* Post Header */}
+          <AnimatedSection delay={0.1}>
+            <div className="mb-8">
+              <span className="text-sm text-accent font-semibold uppercase tracking-wide">
+                {post.category}
+              </span>
+              <h1 className="text-4xl md:text-6xl font-bold text-soft-white mt-4 mb-6">
+                {post.title}
+              </h1>
+              <div className="flex items-center text-muted-grey text-sm space-x-4">
+                <span>
+                  {new Date(post.createdAt).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </span>
+                <span>•</span>
+                <span>{post.readTime} min read</span>
+              </div>
+            </div>
+
+            {post.featuredImage && (
+              <div className="mb-8">
+                <img
+                  src={post.featuredImage}
+                  alt={post.title}
+                  loading="lazy"
+                  className="w-full rounded-lg object-cover"
+                />
+              </div>
+            )}
+
+            <div className="w-full h-1 bg-gradient-to-r from-accent to-transparent mb-12"></div>
+          </AnimatedSection>
+
+          {/* Post Content */}
+          <AnimatedSection delay={0.2}>
+            <div
+              className="prose prose-invert prose-lg max-w-none
+              prose-headings:text-soft-white prose-headings:font-bold
+              prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-6
+              prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-4
+              prose-p:text-muted-grey prose-p:leading-relaxed prose-p:mb-6
+              prose-a:text-accent prose-a:no-underline hover:prose-a:text-soft-white
+              prose-strong:text-soft-white prose-strong:font-semibold
+              prose-ul:text-muted-grey prose-ul:my-6
+              prose-li:my-2
+              prose-code:text-accent prose-code:bg-steel/30 prose-code:px-2 prose-code:py-1 prose-code:rounded"
+              dangerouslySetInnerHTML={{ __html: post.content }}
+            />
+          </AnimatedSection>
+
+          {/* Post Footer */}
+          <AnimatedSection delay={0.3}>
+            <div className="mt-16 pt-8 border-t border-steel">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+                <Link
+                  href="/blog"
+                  className="px-6 py-3 border-2 border-accent text-accent font-semibold rounded-lg hover:bg-accent hover:text-charcoal transition-all duration-300"
+                >
+                  ← More Articles
+                </Link>
+                <Link
+                  href="/contact"
+                  className="px-6 py-3 bg-accent text-charcoal font-semibold rounded-lg hover:bg-soft-white transition-all duration-300"
+                >
+                  Start a Project →
+                </Link>
+              </div>
+            </div>
+          </AnimatedSection>
+        </article>
+      </div>
+    </>
+  );
+};
+
+export default BlogPost;

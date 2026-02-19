@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Design system tokens */
+  --border: 240 5.9% 90%;
+  --background: 0 0% 100%;
+  --foreground: 240 10% 3.9%;
+  
+  /* Primary Colors */
+  --charcoal: #0B0D10;
+  --graphite: #151820;
+  --steel: #2A2F3A;
+  
+  /* Text Colors */
+  --soft-white: #E6EAF0;
+  --muted-grey: #9AA3B2;
+  
+  /* Accent Color (Electric Cyan) */
+  --accent: #3CF2FF;
+}
+
+@theme inline {
+  --color-border: hsl(var(--border));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  /* Custom color definitions */
+  --color-charcoal: var(--charcoal);
+  --color-graphite: var(--graphite);
+  --color-steel: var(--steel);
+  --color-soft-white: var(--soft-white);
+  --color-muted-grey: var(--muted-grey);
+  --color-accent: var(--accent);
+  
+  --font-sans: 'Inter', 'Space Grotesk', system-ui, sans-serif;
+  --font-heading: 'Orbitron', 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* Dark theme - since we're using a dark-only theme */
+:root {
+  --charcoal: #0B0D10;
+  --graphite: #151820;
+  --steel: #2A2F3A;
+  --soft-white: #E6EAF0;
+  --muted-grey: #9AA3B2;
+  --accent: #3CF2FF;
+}
+
+body {
+  background: var(--charcoal);
+  color: var(--soft-white);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(60, 242, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(60, 242, 255, 0.6); }
+}
+
+.fade-in { animation: fadeIn 0.8s ease-out forwards; }
+.slide-up { animation: slideUp 0.6s ease-out forwards; }
+.glow { animation: glow 2s ease-in-out infinite; }
+
+/* Cyber grid background pattern */
+.cyber-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(42, 47, 58, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(42, 47, 58, 0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--graphite);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2BCAEF;
+}

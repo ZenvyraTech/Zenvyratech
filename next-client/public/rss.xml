@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+  <title>Zenvyra Tech Blog</title>
+  <link>https://www.zenvyratech.in/blog</link>
+  <description>Latest articles about web development, SEO, and digital growth from Zenvyra Tech.</description>
+  <language>en-US</language>
+  <lastBuildDate>Tue, 20 Jan 2026 17:28:01 GMT</lastBuildDate>
+  <item>
+    <title><![CDATA[Building Scalable Web Applications in 2026]]></title>
+    <link>https://www.zenvyratech.in/blog/building-scalable-web-applications-2026</link>
+    <guid isPermaLink="true">https://www.zenvyratech.in/blog/building-scalable-web-applications-2026</guid>
+    <description><![CDATA[Key principles and modern architectures for building web applications that grow with your business.]]></description>
+    <pubDate>Sat, 10 Jan 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[Technical SEO: The Foundation of Organic Growth]]></title>
+    <link>https://www.zenvyratech.in/blog/technical-seo-foundation-organic-growth</link>
+    <guid isPermaLink="true">https://www.zenvyratech.in/blog/technical-seo-foundation-organic-growth</guid>
+    <description><![CDATA[Understanding technical SEO fundamentals that drive long-term search visibility.]]></description>
+    <pubDate>Thu, 08 Jan 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[The Minimalist Approach to Web Design]]></title>
+    <link>https://www.zenvyratech.in/blog/minimalist-approach-web-design</link>
+    <guid isPermaLink="true">https://www.zenvyratech.in/blog/minimalist-approach-web-design</guid>
+    <description><![CDATA[Why less is more when it comes to modern web design and user experience.]]></description>
+    <pubDate>Mon, 05 Jan 2026 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[Optimizing Conversion Rates Through UX Design]]></title>
+    <link>https://www.zenvyratech.in/blog/optimizing-conversion-rates-ux-design</link>
+    <guid isPermaLink="true">https://www.zenvyratech.in/blog/optimizing-conversion-rates-ux-design</guid>
+    <description><![CDATA[How strategic user experience design directly impacts your business metrics.]]></description>
+    <pubDate>Sun, 28 Dec 2025 00:00:00 GMT</pubDate>
+  </item>
+  <item>
+    <title><![CDATA[Future of Responsive Web Development]]></title>
+    <link>https://www.zenvyratech.in/blog/future-responsive-web-development</link>
+    <guid isPermaLink="true">https://www.zenvyratech.in/blog/future-responsive-web-development</guid>
+    <description><![CDATA[Exploring emerging trends and technologies shaping the next generation of responsive websites.]]></description>
+    <pubDate>Sat, 20 Dec 2025 00:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>

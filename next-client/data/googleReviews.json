@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Harsh Raj",
+    "rating": 5,
+    "text": "Great experience working with this team. They understood my requirements clearly and delivered a clean, modern website. Very professional and supportive throughout the project.",
+    "date": "2025-01-17",
+    "formattedDate": "Jan 17, 2025"
+  },
+  {
+    "id": 2,
+    "name": "Balbir Kumar",
+    "rating": 5,
+    "text": "Great experience with Zenvyra Tech. They did an excellent UI upgrade. Clean design, smooth performance, and timely delivery.",
+    "date": "2025-01-16",
+    "formattedDate": "Jan 16, 2025"
+  },
+  {
+    "id": 3,
+    "name": "Mr Ankit Singh",
+    "rating": 5,
+    "text": "Super impressed with Zenvyra Tech. They made the whole web development process feel effortless and stress-free.",
+    "date": "2025-01-15",
+    "formattedDate": "Jan 15, 2025"
+  },
+  {
+    "id": 4,
+    "name": "Sobha Sharma",
+    "rating": 5,
+    "text": "Graphic design work is awesome and very neat. Loved the creativity and quality.",
+    "date": "2025-01-15",
+    "formattedDate": "Jan 15, 2025"
+  },
+  {
+    "id": 5,
+    "name": "Anamika Sharma",
+    "rating": 5,
+    "text": "Excellent digital marketing service. Very professional team and good communication.",
+    "date": "2025-01-15",
+    "formattedDate": "Jan 15, 2025"
+  },
+  {
+    "id": 6,
+    "name": "Aarya Patil",
+    "rating": 5,
+    "text": "I really loved the work. Very professional and the quality of work is excellent. Highly recommended.",
+    "date": "2025-01-14",
+    "formattedDate": "Jan 14, 2025"
+  },
+  {
+    "id": 7,
+    "name": "Mr Ankit",
+    "rating": 5,
+    "text": "Very smooth and hassle-free experience. Zenvyra Tech handled everything professionally.",
+    "date": "2025-01-14",
+    "formattedDate": "Jan 14, 2025"
+  },
+  {
+    "id": 8,
+    "name": "Ali Waris",
+    "rating": 5,
+    "text": "Had a fantastic experience. They built our website from scratch and the result exceeded expectations.",
+    "date": "2025-01-14",
+    "formattedDate": "Jan 14, 2025"
+  },
+  {
+    "id": 9,
+    "name": "Ankit Yadav",
+    "rating": 5,
+    "text": "Great company. Happy with the service.",
+    "date": "2025-01-14",
+    "formattedDate": "Jan 14, 2025"
+  }
+]
