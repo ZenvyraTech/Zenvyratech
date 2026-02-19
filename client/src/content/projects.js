@@ -24,6 +24,27 @@ seoKeywords: ['real estate', 'property']
 
 {
 id: 2,
+title: 'Royal Boom – Unisex Perfumes ',
+slug: 'royal-boom',
+category: 'perfume eccomerce',
+description: 'Luxury and royal perfume brand.',
+fullDescription: `Premium brand positioning and lead generation.`,
+technologies: ['Next.js'],
+preview: true,
+image: 'https://image.thum.io/get/width/1200/crop/800/noanimate/https://royalboom.in/',
+gallery: [
+'https://image.thum.io/get/width/1200/crop/800/noanimate/https://royalboom.in/'
+],
+liveUrl: 'https://royalboom.in/',
+year: 2025,
+client: 'perfume',
+results: ['Premium positioning'],
+seoDescription: 'perfume website.',
+seoKeywords: ['eccomerce', 'perfume']
+},
+
+{
+id: 3,
 title: 'SR Clinic – Healthcare Website',
 slug: 'sr-clinic',
 category: 'Healthcare',
@@ -44,7 +65,7 @@ seoKeywords: ['clinic']
 },
 
 {
-id: 3,
+id: 4,
 title: 'Achiever Institute – Education Website',
 slug: 'achiever-institute',
 category: 'Education',
@@ -65,7 +86,7 @@ seoKeywords: ['education']
 },
 
 {
-id: 4,
+id: 5,
 title: 'Shree Krishnalaya – Spiritual Platform',
 slug: 'shree-krishnalaya',
 category: 'Spiritual',
@@ -86,7 +107,7 @@ seoKeywords: ['temple', 'spiritual']
 },
 
 {
-id: 5,
+id: 6,
 title: 'Gift of Life – Blood Donation Platform',
 slug: 'gift-of-life',
 category: 'NGO',
@@ -107,7 +128,7 @@ seoKeywords: ['blood']
 },
 
 {
-id: 6,
+id: 7,
 title: 'Shri Jai Maa Baglamukhi Trust – NGO',
 slug: 'baglamukhi-trust',
 category: 'NGO',
@@ -128,7 +149,7 @@ seoKeywords: ['trust']
 },
 
 {
-id: 7,
+id: 8,
 title: 'Dharma Foundations – NGO Website',
 slug: 'dharma-foundations',
 category: 'NGO',
@@ -149,7 +170,7 @@ seoKeywords: ['ngo']
 },
 
 {
-id: 8,
+id: 9,
 title: 'Ethereal Beauty Suite – Luxury Salon',
 slug: 'ethereal-beauty',
 category: 'Beauty',

@@ -45,26 +45,6 @@ const Reviews = () => {
           })}
         </script>
       </Helmet>
-      
-      {/* Hero Section */}
-      <section className="relative py-20 md:py-28 bg-gradient-to-br from-graphite to-charcoal cyber-grid">
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-transparent"></div>
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <AnimatedSection>
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 text-soft-white text-glow">
-                Client Testimonials
-              </h1>
-              <p className="text-xl text-muted-grey max-w-2xl mx-auto">
-                Hear what our clients have to say about our services
-              </p>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
 
       {/* Reviews Section */}
       <AllGoogleReviews />

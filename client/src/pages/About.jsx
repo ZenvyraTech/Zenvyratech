@@ -113,68 +113,125 @@ const About = () => {
           </div>
         </section>
 
-        {/* Founder Section */}
-        <section className="py-24 bg-graphite">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Founder Image */}
-              <AnimatedSection>
-                <div className="relative aspect-square rounded-lg overflow-hidden glass-effect">
-                  <img 
-                    src="/founder.png" 
-                    alt="Abhishek, Founder of Zenvyra Tech"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </AnimatedSection>
+{/* Founder Section */}
+<section className="py-24 bg-graphite">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
 
-              {/* Founder Info */}
-              <AnimatedSection delay={0.3}>
-                <div className="space-y-6">
-                  <div>
-                    <h2 className="text-4xl md:text-5xl font-bold mb-2 text-soft-white">
-                      Abhishek
-                    </h2>
-                    <p className="text-xl text-accent font-semibold mb-6">
-                      Founder & Digital Engineer
-                    </p>
-                  </div>
+      {/* Founder Image */}
+      <AnimatedSection>
+        <div className="relative aspect-square rounded-xl overflow-hidden glass-effect shadow-2xl border border-white/10 group">
+          <img
+            src="/founder.webp"
+            alt="Abhishek Sharma, Founder of Zenvyra Tech"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            loading="lazy"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
 
-                  <div className="space-y-4">
-                    <p className="text-lg text-muted-grey leading-relaxed">
-                      Founded Zenvyra Tech with the belief that <span className="text-soft-white font-semibold">digital systems should deliver results, not just aesthetics</span>.
-                    </p>
+          {/* subtle glow */}
+          <div className="absolute -inset-1 bg-accent/10 blur-2xl opacity-40 group-hover:opacity-60 transition"></div>
+        </div>
+      </AnimatedSection>
 
-                    <p className="text-lg text-muted-grey leading-relaxed">
-                      Specializes in <span className="text-accent">scalable web development</span>, <span className="text-accent">technical SEO</span>, and <span className="text-accent">growth-oriented digital solutions</span> for forward-thinking businesses.
-                    </p>
+      {/* Founder Info */}
+      <AnimatedSection delay={0.3}>
+        <div className="space-y-8">
 
-                    <p className="text-lg text-muted-grey leading-relaxed">
-                      Leads projects with a systems-first approach: <span className="text-soft-white italic">engineered for performance, built to scale</span>.
-                    </p>
-                  </div>
+          {/* Name + Role */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-2 text-soft-white">
+              Abhishek Sharma
+            </h2>
+            <p className="text-xl text-accent font-semibold">
+              Founder & Digital Engineer
+            </p>
+          </div>
 
-                  <div className="pt-6">
-                    <div className="flex flex-wrap gap-3">
-                      <span className="px-4 py-2 bg-steel/50 text-soft-white rounded text-sm">
-                        Scalable Web Apps
-                      </span>
-                      <span className="px-4 py-2 bg-steel/50 text-soft-white rounded text-sm">
-                        Technical SEO
-                      </span>
-                      <span className="px-4 py-2 bg-steel/50 text-soft-white rounded text-sm">
-                        System Architecture
-                      </span>
-                      <span className="px-4 py-2 bg-steel/50 text-soft-white rounded text-sm">
-                        Growth Engineering
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
+          {/* Core positioning */}
+          <div className="space-y-5">
+            <p className="text-lg text-muted-grey leading-relaxed">
+              Founded Zenvyra Tech with the belief that{" "}
+              <span className="text-soft-white font-semibold">
+                digital systems should generate real business growth, not just visual appeal
+              </span>.
+            </p>
+
+            <p className="text-lg text-muted-grey leading-relaxed">
+              Focused on building{" "}
+              <span className="text-accent">
+                scalable, performance-driven platforms
+              </span>{" "}
+              that combine design, technology, and growth strategy to help
+              businesses generate consistent enquiries and long-term value.
+            </p>
+
+            <p className="text-lg text-muted-grey leading-relaxed">
+              Works with startups, hospitality brands, and service-based
+              businesses to develop systems engineered for{" "}
+              <span className="italic text-soft-white">
+                speed, scalability, and measurable results.
+              </span>
+            </p>
+          </div>
+
+          {/* Credibility */}
+          <div className="space-y-4">
+            <p className="text-muted-grey">
+              Recent work includes high-conversion websites, lead funnels,
+              and brand platforms across travel, experiential, and local
+              business industries.
+            </p>
+
+            <p className="text-muted-grey">
+              Approach combines technical architecture, SEO, and growth
+              engineering to create long-term digital assets instead of
+              short-term marketing experiments.
+            </p>
+          </div>
+
+          {/* Skill tags */}
+          <div className="pt-4">
+            <div className="flex flex-wrap gap-3">
+              {[
+                "Scalable Web Apps",
+                "Technical SEO",
+                "System Architecture",
+                "Growth Engineering",
+                "Lead Funnels",
+                "Performance Marketing",
+              ].map((skill) => (
+                <span
+                  key={skill}
+                  className="px-4 py-2 bg-steel/50 text-soft-white rounded-md text-sm backdrop-blur border border-white/10 hover:border-accent/40 transition"
+                >
+                  {skill}
+                </span>
+              ))}
             </div>
           </div>
-        </section>
+
+          {/* Social + CTA */}
+          <div className="pt-6 flex flex-wrap items-center gap-4">
+            <a
+              href="https://www.linkedin.com/in/yup-abhishek/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 bg-accent text-black font-semibold rounded-lg hover:opacity-90 transition shadow-lg"
+            >
+              Connect on LinkedIn
+            </a>
+
+            <span className="text-muted-grey text-sm">
+              Open to collaborations and long-term partnerships
+            </span>
+          </div>
+
+        </div>
+      </AnimatedSection>
+    </div>
+  </div>
+</section>
 
         {/* Values */}
         <section className="py-24">

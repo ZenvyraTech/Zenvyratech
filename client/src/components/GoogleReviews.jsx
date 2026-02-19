@@ -84,7 +84,7 @@ const GoogleReviewsSection = ({ title = "What Clients Say" }) => {
   const roundedAverage = Math.round(averageRating * 10) / 10; // Round to 1 decimal place
 
   return (
-    <section className="py-16 bg-graphite" id="reviews" itemScope itemType="https://schema.org/CreativeWorkSeries">
+    <section className="py-16 bg-charcoal" id="reviews" itemScope itemType="https://schema.org/CreativeWorkSeries">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-soft-white" id="reviews-heading">

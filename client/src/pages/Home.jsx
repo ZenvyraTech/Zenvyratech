@@ -7,6 +7,8 @@ import { FaCode, FaShoppingCart, FaSearch, FaBullhorn, FaPalette, FaCogs } from 
 import HoverAnimation from '../components/HoverAnimation';
 import { staggerContainer, textVariant } from '../utils/animationUtils';
 import { GoogleReviewsSection } from '../components/GoogleReviews';
+import Contact from "../pages/Contact";
+
 
 const Home = () => {
   const services = [
@@ -273,8 +275,121 @@ const Home = () => {
         {/* Google Reviews Section */}
         <GoogleReviewsSection />
 
+{/* Projects Preview */}
+<section className="py-24 bg-graphite">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    {/* Heading */}
+    <AnimatedSection className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-soft-white mb-4">
+        Real Results
+      </h2>
+      <div className="w-20 h-1 bg-accent mx-auto mb-6"></div>
+      <p className="text-muted-grey max-w-3xl mx-auto">
+        A glimpse into how strategic design and performance-driven systems help businesses grow.
+      </p>
+    </AnimatedSection>
+
+    {/* Projects Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      {/* Project 1 */}
+      <HoverAnimation>
+        <GlassCard className="group">
+          <div className="aspect-video mb-4 overflow-hidden rounded-lg">
+            <img
+              src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://sr-clinic-ten.vercel.app/"
+              alt="Hospitality Lead System"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              loading="lazy"
+            />
+          </div>
+
+          <h3 className="text-xl font-semibold text-soft-white mb-2">
+            Hospitality Lead System
+          </h3>
+
+          <p className="text-muted-grey mb-4">
+            Built a high-conversion website and WhatsApp funnel that increased direct enquiries.
+          </p>
+
+          <Link to="/projects" className="text-accent font-medium">
+            View case study →
+          </Link>
+        </GlassCard>
+      </HoverAnimation>
+
+
+      {/* Project 2 */}
+      <HoverAnimation>
+        <GlassCard className="group">
+          <div className="aspect-video mb-4 overflow-hidden rounded-lg">
+            <img
+              src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://royalboom.in/"
+              alt="E-commerce Optimization"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              loading="lazy"
+            />
+          </div>
+
+          <h3 className="text-xl font-semibold text-soft-white mb-2">
+            E-commerce Conversion Upgrade
+          </h3>
+
+          <p className="text-muted-grey mb-4">
+            Redesigned store UX and checkout flow to improve conversion and revenue.
+          </p>
+
+          <Link to="/projects" className="text-accent font-medium">
+            View case study →
+          </Link>
+        </GlassCard>
+      </HoverAnimation>
+
+
+      {/* Project 3 */}
+      <HoverAnimation>
+        <GlassCard className="group">
+          <div className="aspect-video mb-4 overflow-hidden rounded-lg">
+            <img
+              src="https://image.thum.io/get/width/1200/crop/800/noanimate/https://dharma-foundations.vercel.app/"
+              alt="Local SEO Growth"
+              className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              loading="lazy"
+            />
+          </div>
+
+          <h3 className="text-xl font-semibold text-soft-white mb-2">
+            NGO & Growth System
+          </h3>
+
+          <p className="text-muted-grey mb-4">
+            Built NGO foundation and local funnel to drive consistent organic donations.
+          </p>
+
+          <Link to="/projects" className="text-accent font-medium">
+            View case study →
+          </Link>
+        </GlassCard>
+      </HoverAnimation>
+
+    </div>
+
+    {/* CTA */}
+    <AnimatedSection delay={0.4} className="text-center mt-14">
+      <Link
+        to="/projects"
+        className="inline-block px-8 py-3 border-2 border-accent text-accent font-semibold rounded-lg hover:bg-accent hover:text-charcoal transition-all duration-300"
+      >
+        View All Case Studies
+      </Link>
+    </AnimatedSection>
+
+  </div>
+</section>
+
         {/* Who We Work With */}
-        <section className="py-24 bg-graphite">
+        <section className="py-24 bg-charcoal">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-soft-white">
@@ -314,7 +429,7 @@ const Home = () => {
         </section>
 
         {/* Why Clients Choose Zenvyra */}
-        <section className="py-24">
+        <section className="py-24 bg-graphite">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-4 text-soft-white">
@@ -360,8 +475,33 @@ const Home = () => {
             </div>
           </div>
         </section>
+
+        {/* Contact Section on Home */}
+<section className="py-24 bg-charcoal">
+  <Contact />
+</section>
+
+
+ {/* CTA Strip
+        <section className="py-24 bg-gradient-to-r from-graphite to-steel">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <AnimatedSection>
+              <h2 className="text-3xl md:text-5xl font-bold mb-8 text-soft-white">
+                Let's build something solid.
+              </h2>
+              <HoverAnimation>
+                <Link
+                  to="/contact"
+                  className="inline-block px-10 py-4 bg-accent text-charcoal font-bold rounded-lg hover:bg-soft-white transition-all duration-300 transform hover:scale-105"
+                >
+                  Get Started
+                </Link>
+              </HoverAnimation>
+            </AnimatedSection>
+          </div>
+        </section>       */}   
         {/* Founder Preview */}
-        <section className="py-24">
+        <section className="py-24 bg-graphite">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AnimatedSection>
               <GlassCard className="text-center max-w-3xl mx-auto">
@@ -383,24 +523,7 @@ const Home = () => {
             </AnimatedSection>
           </div>
         </section>
-        {/* CTA Strip */}
-        <section className="py-24 bg-gradient-to-r from-graphite to-steel">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <AnimatedSection>
-              <h2 className="text-3xl md:text-5xl font-bold mb-8 text-soft-white">
-                Let's build something solid.
-              </h2>
-              <HoverAnimation>
-                <Link
-                  to="/contact"
-                  className="inline-block px-10 py-4 bg-accent text-charcoal font-bold rounded-lg hover:bg-soft-white transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                </Link>
-              </HoverAnimation>
-            </AnimatedSection>
-          </div>
-        </section>
+
       </div>
     </>
   );
